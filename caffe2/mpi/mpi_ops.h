@@ -173,7 +173,7 @@ class MPISendTensorOp final : public Operator<Context> {
     }
     if (raw_buffer_) {
       MPI_CHECK(MPI_Send(
-          input.raw_data(), input.nbytes(), MPI_CHAR, dst_, tag_, comm));
+          (void*)input.raw_data(), input.nbytes(), MPI_CHAR, dst_, tag_, comm));
     } else {
       CAFFE_NOT_IMPLEMENTED;
     }
