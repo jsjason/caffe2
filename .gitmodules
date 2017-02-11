@@ -34,3 +34,6 @@
 [submodule "third_party/NNPACK"]
 	path = third_party/NNPACK
 	url = https://github.com/Maratyszcza/NNPACK.git
+[submodule "third_party/htrace"]
+	path = third_party/htrace
+	url = https://github.com/jsjason/incubator-htrace.git
