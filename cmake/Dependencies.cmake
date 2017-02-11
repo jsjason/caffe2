@@ -268,3 +268,10 @@ if(USE_CUDA)
   # message(STATUS "${CMAKE_CURRENT_BINARY_DIR}")
   list(APPEND Caffe2_DEPENDENCY_LIBS "${CMAKE_CURRENT_BINARY_DIR}/third_party/cnmem/libcnmem.so")
 endif()
+
+# ---[ htrace
+include("cmake/External/htrace.cmake")
+include_directories(SYSTEM ${HTRACE_INCLUDE_DIRS})
+message(STATUS "HTRACE INCLUDE: ${HTRACE_INCLUDE_DIRS}")
+message(STATUS "HTRACE LIBRARIES: ${HTRACE_LIBRARIES}")
+list(APPEND Caffe2_DEPENDENCY_LIBS ${HTRACE_LIBRARIES})
